@@ -148,7 +148,10 @@ module.exports = {
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
-              plugins: [ 'transform-decorators-legacy' ],
+              plugins: [ 
+                'transform-decorators-legacy',
+                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": 'css' }]
+              ],
               cacheDirectory: true,
             },
           },

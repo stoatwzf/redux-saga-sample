@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 import reducers from './reducers';
 import Home from './pages/Home';
 import sagas from './sagas';
