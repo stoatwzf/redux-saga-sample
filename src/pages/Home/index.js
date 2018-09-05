@@ -72,6 +72,23 @@ class Home extends Component {
 		});
 	}
 
+	countHandler = event => {
+		const { dispatch } = this.props;
+
+		dispatch({
+			type: 'BEGIN_COUNT',
+			payload: 10
+		});
+	}
+
+	deCountHandler = event => {
+		const { dispatch } = this.props;
+
+		dispatch({
+			type: 'STOP_TASK'
+		});
+	}
+
 	render (){
 		const { counter, list, user, date } = this.props;
 
@@ -89,6 +106,9 @@ class Home extends Component {
       <Button type="primary" onClick={this.startHandler}>start</Button>
       <Button type="primary" onClick={this.endHandler}>end</Button>
       <h1>Date: {date}</h1>
+      <br />
+      <Button type="primary" onClick={this.countHandler}>count</Button>
+      <Button type="primary" onClick={this.deCountHandler}>deCount</Button>
       <List 
       	dataSource={list}
       	renderItem={({ text, price }) => <List.Item>{price}</List.Item>}

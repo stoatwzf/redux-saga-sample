@@ -5,6 +5,7 @@ import watchFetchData from './watchFetchData';
 import watchIncrementAsync from './watchIncrementAsync';
 import loginFlow from './loginFlow';
 import polling from './polling';
+import recount from './recount';
 
 export default function * (){
 	yield all([
@@ -12,6 +13,7 @@ export default function * (){
 		watchIncrementAsync(),
 		watchFetchData(),
 		loginFlow(),
-		polling()
+		polling(),
+		recount()
 	]);
 }
